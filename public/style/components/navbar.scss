@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1vw;
+  height: 8vh;
+  border-bottom: 1px solid white;
+  background-color: rgba(51, 50, 50, 0.8);
+  color: white;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    span {
+      margin-left: 0.2rem;
+    }
+  }
+
+  .search {
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 1.5rem;
+      margin-right: 0.2rem;
+    }
+
+    input[type="search"] {
+      width: 80%;
+      font-size: 1rem;
+      border-radius: 20px;
+      padding: 0.25rem 1rem;
+
+      &:active {
+        outline: 0;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .github-link {
+    font-size: 2rem;
+    color: white;
+  }
+}

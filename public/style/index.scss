@@ -1,0 +1,27 @@
+/* layout style */
+@import "./layout.scss";
+
+/* components style */
+@import "./components/navbar.scss";
+
+@import "./components/sidebar.scss";
+
+/* containers style */
+@import "./containers/homepage.scss";
+
+@font-face {
+  font-family: genSen;
+  src: url(../style/font-family/GenSenRounded2TW-B.otf),
+    url(../style/font-family/GenSenRounded2TW-EL.otf),
+    url(../style/font-family/GenSenRounded2TW-H.otf),
+    url(../style/font-family/GenSenRounded2TW-L.otf),
+    url(../style/font-family/GenSenRounded2TW-M.otf),
+    url(../style/font-family/GenSenRounded2TW-R.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: genSen, Arial, sans-serif;
+}

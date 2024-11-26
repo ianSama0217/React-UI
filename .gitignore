@@ -11,7 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
-public
+public/style/font-family
+public/img
 
 # Editor directories and files
 .vscode/*

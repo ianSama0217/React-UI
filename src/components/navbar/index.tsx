@@ -10,11 +10,15 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="search">
-        <span>搜尋</span>
+        <span>Search</span>
         <input type="search" />
       </div>
 
-      <a href="#" target="blank" className="github-link">
+      <a
+        href="https://github.com/ianSama0217/React-UI"
+        target="blank"
+        className="github-link"
+      >
         <i className="fa-brands fa-github"></i>
       </a>
     </div>

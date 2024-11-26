@@ -1,0 +1,13 @@
+.home-page {
+  background-image: url("/img/homePage-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 92vh;
+
+  span {
+    backdrop-filter: blur(3px);
+    padding: 1rem;
+    color: white;
+    font-size: 5rem;
+  }
+}

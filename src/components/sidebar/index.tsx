@@ -1,39 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-type menuItem = {
-  icon: string; // img src
+type SidebarItems = {
+  icon?: string; // img src
   title: string;
   path?: string;
-  children?: Array<menuItem>;
+  children?: Array<SidebarItems>;
 };
 
 type SidebarProps = {
-  menu: Array<menuItem>;
+  menu: Array<SidebarItems>;
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ menu }) => {
   return (
     <div className="sidebar">
       <ul>
-        {menu.map((item) => {
-          return item.children ? (
-            <li key={item.title}>
-              <ul>
-                <li>{item.title}</li>
-                {item.children.map((child) => (
-                  <li key={child.title}>
-                    <Link to={child.path || "#"}>{child.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ) : (
-            <li key={item.title}>
-              <Link to={item.path || "#"}>{item.title}</Link>
-            </li>
-          );
-        })}
+        {menu.map((item, index) => (
+          <li key={item.title + index}>
+            {item.children ? (
+              <>
+                <div className="title">
+                  {item.icon && <img src={item.icon} alt="icon" />}
+                  <span>{item.title} </span>
+                </div>
+
+                <ul>
+                  {item.children?.map((child, i) => (
+                    <li key={child.title + i} className="sub-li">
+                      <Link to={child.path || "#"} className="link">
+                        {child.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <Link to={item.path || "#"} className="link">
+                {item.title}
+              </Link>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   );

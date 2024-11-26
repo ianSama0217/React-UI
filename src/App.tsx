@@ -1,18 +1,23 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import {Router as MenuLink} from "./routers";
+import { RouterLink, SidebarData } from "./routers";
+import Navbar from "./components/navbar";
+import Sidebar from "./components/sidebar";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-        {MenuLink.map(item,index)=>
-           <Route key={index} path={item.path} element={item.element} />
-        }
-        </Routes>
+      <BrowserRouter basename="/React_UI/">
+        <Navbar />
+        <div className="flex-row">
+          <Sidebar menu={SidebarData} />
+          <Routes>
+            {RouterLink.map((item, index) => (
+              <Route key={index} path={item.path} element={item.element} />
+            ))}
+          </Routes>
+        </div>
       </BrowserRouter>
-      <h1>body</h1>
     </>
   );
 }
