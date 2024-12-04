@@ -1,23 +1,31 @@
 import React from "react";
-import Codeboard from "../../components/codeboard";
+import BasicLayout from "../../components/basicLayout";
 
 const TestPage: React.FC = () => {
-  const codeBlock = `
-const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
-  return (
-    <div>
-        <h2> {item.name} </h2>
-        <p> Price: {item.price} </p>
-        <p> Quantity: {item.quantity} </p>
-    </div>
-  );
-}
+  const components = [
+    <button>按鈕1</button>,
+    <button>按鈕2</button>,
+    <button>按鈕3</button>,
+    <button>按鈕4</button>,
+    <button>按鈕5</button>,
+  ];
+
+  const codeContent = `
+    <button>按鈕1</button>
+    <button>按鈕2</button>
+    <button>按鈕3</button>
+    <button>按鈕4</button>
+    <button>按鈕5</button>
 `;
 
   return (
-    <div className="">
+    <div className="flex-column ai-center w-full basic-bg">
       <span>TEST</span>
-      <Codeboard code={codeBlock} />
+      <BasicLayout
+        title="測試Layout"
+        components={components}
+        code={codeContent}
+      />
     </div>
   );
 };

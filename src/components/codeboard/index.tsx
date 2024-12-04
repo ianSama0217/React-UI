@@ -1,12 +1,12 @@
 import React from "react";
 import { Highlight, themes } from "prism-react-renderer";
 
-interface CodeBlockProps {
+interface Props {
   code: string;
   language?: string;
 }
 
-const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
+const CodeBoard: React.FC<Props> = ({ code, language = "tsx" }) => {
   return (
     <div className="codeboard">
       <Highlight theme={themes.jettwaveDark} code={code} language={language}>
@@ -31,4 +31,4 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language = "tsx" }) => {
   );
 };
 
-export default CodeBlock;
+export default CodeBoard;
