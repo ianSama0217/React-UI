@@ -1,5 +1,6 @@
 import React from "react";
 import BasicLayout from "../../components/basicLayout";
+import Button from "../../components/button";
 
 const TestPage: React.FC = () => {
   const components = [
@@ -20,12 +21,14 @@ const TestPage: React.FC = () => {
 
   return (
     <div className="flex-column ai-center w-full basic-bg">
-      <span>TEST</span>
+      <span style={{ color: "white", fontSize: "1.5rem" }}>TEST</span>
       <BasicLayout
         title="測試Layout"
         components={components}
         code={codeContent}
       />
+      <span style={{ color: "white", fontSize: "1rem" }}>Button</span>
+      <Button title="測試按鈕" />
     </div>
   );
 };
