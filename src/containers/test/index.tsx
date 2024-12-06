@@ -1,22 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import BasicLayout from "../../components/basicLayout";
 import Button from "../../components/button";
 
 const TestPage: React.FC = () => {
+  const [dis, setDis] = useState<boolean>(false);
+
   const components = [
-    <button>按鈕1</button>,
-    <button>按鈕2</button>,
-    <button>按鈕3</button>,
-    <button>按鈕4</button>,
-    <button>按鈕5</button>,
+    <Button
+      title="測試按鈕"
+      style="primary"
+      startIcon={<i className="fa-solid fa-location-dot"></i>}
+      disabled={dis}
+      onClick={() => {
+        setDis(true);
+      }}
+    />,
+    <Button title="測試按鈕" style="secondary" size="btn-sm" disabled={dis} />,
+    <Button
+      style="success"
+      startIcon={<i className="fa-regular fa-share-from-square"></i>}
+      onClick={() => {
+        setDis(true);
+      }}
+    />,
+    <Button title="測試按鈕" style="outline-warning" size="btn-lg" />,
+    <Button
+      title="測試按鈕"
+      style="danger"
+      endIcon={<i className="fa-solid fa-location-dot"></i>}
+    />,
   ];
 
   const codeContent = `
-    <button>按鈕1</button>
-    <button>按鈕2</button>
-    <button>按鈕3</button>
-    <button>按鈕4</button>
-    <button>按鈕5</button>
+    <Button title="測試按鈕" style="primary" />
+    <Button title="測試按鈕" style="secondary" />
+    <Button title="測試按鈕" style="success" />
+    <Button title="測試按鈕" style="warning" />
+    <Button title="測試按鈕" style="danger" />
 `;
 
   return (
