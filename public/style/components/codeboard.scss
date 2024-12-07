@@ -1,24 +1,44 @@
 .codeboard {
   background-color: rgb(30, 30, 30);
   width: 60vw;
-  min-height: 20vh;
-  padding: 0.5rem 1.5rem;
-  position: relative;
+  //min-height: 20vh;
+  //padding: 0.5rem 1.5rem;
 
-  .copy-icon {
-    position: absolute;
-    top: 2%;
-    right: 1%;
-    // transform: translate(-50%, 50%);
+  .top-bar {
+    border-bottom: 1px solid white;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-    // border: 1px solid white;
+    padding: 0.5rem 1rem;
 
-    .fa-copy {
-      font-size: 1.2rem;
+    span {
       color: white;
+      font-size: 1rem;
+    }
+
+    .copy-icon {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: 0.75rem;
+        background-color: white;
+        color: black;
+        margin-right: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+      }
+
+      .fa-copy {
+        font-size: 1.2rem;
+        color: white;
+      }
+
+      .fa-check {
+        font-size: 1.2rem;
+        color: lightgreen;
+      }
     }
   }
 
