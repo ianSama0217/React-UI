@@ -1,6 +1,7 @@
 import React from "react";
 import HomePage from "../containers/home";
 import TestPage from "../containers/test";
+import ButtonPage from "../containers/buttonPage";
 
 type RouterProps = {
   path: string;
@@ -20,7 +21,7 @@ export const RouterLink: Array<RouterProps> = [
   { path: "/", element: <HomePage /> },
   { path: "/about", element: <HomePage /> },
   { path: "/test", element: <TestPage /> },
-  { path: "/components/button", element: <HomePage /> },
+  { path: "/components/button", element: <ButtonPage /> },
   { path: "/components/switch", element: <HomePage /> },
 ];
 
