@@ -1,19 +1,21 @@
 /* layout style */
-@import "./layout.scss";
+@use "./layout.scss";
 
 /* components style */
-@import "./components/navbar.scss";
+@use "./components/navbar.scss";
 
-@import "./components/sidebar.scss";
+@use "./components/sidebar.scss";
 
-@import "./components/codeboard.scss";
+@use "./components/codeboard.scss";
 
-@import "./components/basicLayout.scss";
+@use "./components/basicLayout.scss";
 
-@import "./components/button.scss";
+@use "./components/button.scss";
+
+@use "./components/switch.scss";
 
 /* containers style */
-@import "./containers/homepage.scss";
+@use "./containers/homepage.scss";
 
 @font-face {
   font-family: genSen;
