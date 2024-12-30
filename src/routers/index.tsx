@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from "../containers/home";
 import TestPage from "../containers/test";
 import ButtonPage from "../containers/buttonPage";
+import SwitchPage from "../containers/switchPage";
 
 type RouterProps = {
   path: string;
@@ -22,7 +23,7 @@ export const RouterLink: Array<RouterProps> = [
   { path: "/about", element: <HomePage /> },
   { path: "/test", element: <TestPage /> },
   { path: "/components/button", element: <ButtonPage /> },
-  { path: "/components/switch", element: <HomePage /> },
+  { path: "/components/switch", element: <SwitchPage /> },
 ];
 
 export const SidebarData: SidebarProps = [
