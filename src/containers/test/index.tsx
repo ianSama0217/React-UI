@@ -1,44 +1,66 @@
 import React, { useState } from "react";
 import BasicLayout from "../../components/basicLayout";
-import Switch from "../../components/switch";
+import Radio from "../../components/radio";
 
 const TestPage: React.FC = () => {
-  const [dis, setDis] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>("");
 
-  function handleChange() {
-    setDis(!dis);
-  }
+  const handleChange = (value: string) => {
+    setSelected(value);
+  };
 
   const components = [
-    <Switch title="wifi" isChecked={dis} onChange={handleChange} />,
-    <Switch title="abc" isChecked={true} />,
-    // <Switch title="Test" isChecked={true} />,
-    <Switch
-      title="test"
-      type="square"
-      isChecked={dis}
-      onChange={handleChange}
+    <Radio
+      size="radio-lg"
+      isChecked={selected === "dis1"}
+      onChange={() => handleChange("dis1")}
+      radioName="a"
+      title="測試lg"
     />,
-    <Switch title="測試" type="square" isChecked={true} />,
-    // <Switch title="測試" type="square" isChecked={true} disabled={true} />,
+    <Radio
+      size="radio-sm"
+      isChecked={selected === "dis2"}
+      onChange={() => handleChange("dis2")}
+      radioName="a"
+      title="測試sm"
+    />,
+    <Radio
+      isChecked={selected === "dis3"}
+      onChange={() => handleChange("dis3")}
+      radioName="a"
+      title="測試basic"
+    />,
   ];
 
+  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    console.log(value);
+  };
+
   const codeContent = `
-    const [dis, setDis] = useState<boolean>(false);
+    const [selected, setSelected] = useState<string>("");
 
-    function handleChange() {
-      setDis(!dis);
-    }
+    const handleChange = (value: string) => {
+      setSelected(value);
+    };
 
-    <Switch title="wifi" isChecked={dis} onChange={handleChange} />
-    <Switch title="abc" isChecked={true} />
-    <Switch
-      title="test"
-      type="square"
-      isChecked={dis}
-      onChange={handleChange}
+    <Radio
+      isChecked={selected === "dis1"}
+      onChange={() => handleChange("dis1")}
+      radioName="a"
+      title="測試1"
     />
-    <Switch title="測試" type="square" isChecked={true} />
+    <Radio
+      isChecked={selected === "dis2"}
+      onChange={() => handleChange("dis2")}
+      radioName="a"
+      title="測試2"
+    />
+    <Radio
+      isChecked={selected === "dis3"}
+      onChange={() => handleChange("dis3")}
+      radioName="a"
+    />
 `;
 
   return (
@@ -49,8 +71,18 @@ const TestPage: React.FC = () => {
         components={components}
         code={codeContent}
       />
-      <span style={{ color: "white", fontSize: "1rem" }}>Switch</span>
-      <Switch isChecked={false} />
+      <Radio title="禁用radio" isChecked={false} disabled={true} />
+      <Radio
+        title="顯示value"
+        isChecked={selected === "dis1"}
+        value="123"
+        onChange={handleChange2}
+      />
+      <Radio
+        title="custom radio"
+        isChecked={selected === "dis1"}
+        customStyle="big"
+      />
     </div>
   );
 };
