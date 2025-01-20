@@ -3,6 +3,7 @@ import HomePage from "../containers/home";
 import TestPage from "../containers/test";
 import ButtonPage from "../containers/buttonPage";
 import SwitchPage from "../containers/switchPage";
+import RadioPage from "../containers/radioPage";
 
 type RouterProps = {
   path: string;
@@ -24,6 +25,7 @@ export const RouterLink: Array<RouterProps> = [
   { path: "/test", element: <TestPage /> },
   { path: "/components/button", element: <ButtonPage /> },
   { path: "/components/switch", element: <SwitchPage /> },
+  { path: "/components/radio", element: <RadioPage /> },
 ];
 
 export const SidebarData: SidebarProps = [
@@ -35,6 +37,7 @@ export const SidebarData: SidebarProps = [
     children: [
       { title: "Button", path: "/components/button" },
       { title: "Switch", path: "/components/switch" },
+      { title: "Radio", path: "/components/radio" },
     ],
   },
 ];
