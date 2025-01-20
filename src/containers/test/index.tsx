@@ -1,38 +1,41 @@
 import React, { useState } from "react";
 import BasicLayout from "../../components/basicLayout";
-import Radio from "../../components/radio";
+import Checkbox from "../../components/checkbox";
 
 const TestPage: React.FC = () => {
-  const [selected, setSelected] = useState<string>("");
+  const [dis1, setDis1] = useState<boolean>(false);
+  const [dis2, setDis2] = useState<boolean>(false);
+  const [dis3, setDis3] = useState<boolean>(false);
 
-  const handleChange = (value: string) => {
-    setSelected(value);
+  const handleChange1 = () => {
+    setDis1(!dis1);
+  };
+
+  const handleChange2 = () => {
+    setDis2(!dis2);
+  };
+
+  const handleChange3 = () => {
+    setDis3(!dis3);
   };
 
   const components = [
-    <Radio
-      size="radio-lg"
-      isChecked={selected === "dis1"}
-      onChange={() => handleChange("dis1")}
-      radioName="a"
+    <Checkbox
+      size="checkbox-lg"
+      isChecked={dis1}
+      onChange={handleChange1}
       title="測試lg"
     />,
-    <Radio
-      size="radio-sm"
-      isChecked={selected === "dis2"}
-      onChange={() => handleChange("dis2")}
-      radioName="a"
+    <Checkbox
+      size="checkbox-sm"
+      isChecked={dis2}
+      onChange={handleChange2}
       title="測試sm"
     />,
-    <Radio
-      isChecked={selected === "dis3"}
-      onChange={() => handleChange("dis3")}
-      radioName="a"
-      title="測試basic"
-    />,
+    <Checkbox isChecked={dis3} onChange={handleChange3} title="測試basic" />,
   ];
 
-  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     console.log(value);
   };
@@ -70,18 +73,6 @@ const TestPage: React.FC = () => {
         title="測試Layout"
         components={components}
         code={codeContent}
-      />
-      <Radio title="禁用radio" isChecked={false} disabled={true} />
-      <Radio
-        title="顯示value"
-        isChecked={selected === "dis1"}
-        value="123"
-        onChange={handleChange2}
-      />
-      <Radio
-        title="custom radio"
-        isChecked={selected === "dis1"}
-        customStyle="big"
       />
     </div>
   );
