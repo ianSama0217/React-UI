@@ -1,68 +1,43 @@
 import React, { useState } from "react";
 import BasicLayout from "../../components/basicLayout";
-import Checkbox from "../../components/checkbox";
+import Slider from "../../components/slider";
 
 const TestPage: React.FC = () => {
-  const [dis1, setDis1] = useState<boolean>(false);
-  const [dis2, setDis2] = useState<boolean>(false);
-  const [dis3, setDis3] = useState<boolean>(false);
+  const [value, setValue] = useState<number>(30);
 
-  const handleChange1 = () => {
-    setDis1(!dis1);
-  };
-
-  const handleChange2 = () => {
-    setDis2(!dis2);
-  };
-
-  const handleChange3 = () => {
-    setDis3(!dis3);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(Number(event.target.value));
   };
 
   const components = [
-    <Checkbox
-      size="checkbox-lg"
-      isChecked={dis1}
-      onChange={handleChange1}
-      title="測試lg"
+    <Slider title="音量" value={value} onChange={handleChange} />,
+    <Slider
+      title="音量"
+      value={value}
+      onChange={handleChange}
+      size="slider-sm"
     />,
-    <Checkbox
-      size="checkbox-sm"
-      isChecked={dis2}
-      onChange={handleChange2}
-      title="測試sm"
+    <Slider
+      title="音量"
+      value={value}
+      onChange={handleChange}
+      size="slider-lg"
     />,
-    <Checkbox isChecked={dis3} onChange={handleChange3} title="測試basic" />,
   ];
 
-  const handleChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    console.log(value);
-  };
-
   const codeContent = `
-    const [selected, setSelected] = useState<string>("");
-
-    const handleChange = (value: string) => {
-      setSelected(value);
-    };
-
-    <Radio
-      isChecked={selected === "dis1"}
-      onChange={() => handleChange("dis1")}
-      radioName="a"
-      title="測試1"
+    <Slider title="音量" value={value} onChange={handleChange} />
+    <Slider
+      title="音量"
+      value={value}
+      onChange={handleChange}
+      size="slider-sm"
     />
-    <Radio
-      isChecked={selected === "dis2"}
-      onChange={() => handleChange("dis2")}
-      radioName="a"
-      title="測試2"
-    />
-    <Radio
-      isChecked={selected === "dis3"}
-      onChange={() => handleChange("dis3")}
-      radioName="a"
+    <Slider
+      title="音量"
+      value={value}
+      onChange={handleChange}
+      size="slider-lg"
     />
 `;
 
