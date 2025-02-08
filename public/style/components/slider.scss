@@ -1,0 +1,21 @@
+.slider {
+  min-width: 20vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    font-size: 1.2rem;
+  }
+
+  .basic {
+  }
+
+  .slider-sm {
+    width: 100px;
+  }
+
+  .slider-lg {
+    width: 200px;
+  }
+}
