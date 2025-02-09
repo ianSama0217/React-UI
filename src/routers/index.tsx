@@ -5,6 +5,7 @@ import ButtonPage from "../containers/buttonPage";
 import SwitchPage from "../containers/switchPage";
 import RadioPage from "../containers/radioPage";
 import CheckboxPage from "../containers/checkboxPage";
+import SliderPage from "../containers/sliderPage";
 
 type RouterProps = {
   path: string;
@@ -28,6 +29,7 @@ export const RouterLink: Array<RouterProps> = [
   { path: "/components/switch", element: <SwitchPage /> },
   { path: "/components/radio", element: <RadioPage /> },
   { path: "/components/checkbox", element: <CheckboxPage /> },
+  { path: "/components/slider", element: <SliderPage /> },
 ];
 
 export const SidebarData: SidebarProps = [
@@ -41,6 +43,7 @@ export const SidebarData: SidebarProps = [
       { title: "Switch", path: "/components/switch" },
       { title: "Radio", path: "/components/radio" },
       { title: "Checkbox", path: "/components/checkbox" },
+      { title: "Slider", path: "/components/slider" },
     ],
   },
 ];
